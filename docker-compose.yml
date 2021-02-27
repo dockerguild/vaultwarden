@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  server:
+    image: bitwardenrs/server:1.19.0-alpine
+    container_name: bitwarden_server
+    restart: unless-stopped
+    volumes:
+      - ./data/server:/data
+    ports:
+      - 127.0.0.1:${APP_PORT}:80
+    env_file:
+      - .env
+      - .env.local
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "10"

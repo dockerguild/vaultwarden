@@ -1,0 +1,8 @@
+.PHONY: filesystem/backup filesystem/restore
+
+filesystem/dump:
+	tar -zcvf ./backup/server.tar.gz data/server
+	cp ./backup/server.tar.gz "./backup/server_`date +%H`.tar.gz"
+
+filesystem/restore:
+	tar -zxvf ./backup/server.tar.gz
