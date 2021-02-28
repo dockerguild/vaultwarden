@@ -15,7 +15,7 @@ Requirement : Nginx
 Edit vhost `config/nginx/proxy.conf` and register it to nginx
 
     ln -s "${PWD}/config/nginx/proxy.conf" /etc/nginx/sites-enabled/bitwarden.conf
-    service restart nginx
+    service nginx restart
 
 ## Configure crontab
 
