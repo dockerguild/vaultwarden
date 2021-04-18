@@ -2,8 +2,8 @@ version: "3"
 services:
 
   server:
-    image: bitwardenrs/server:1.19.0-alpine
-    container_name: bitwarden_server
+    image: bitwardenrs/server:alpine
+    container_name: ${APP_NAME}_server
     restart: unless-stopped
     volumes:
       - ./data/server:/data

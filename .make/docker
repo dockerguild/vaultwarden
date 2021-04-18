@@ -1,6 +1,12 @@
-.PHONY: docker/start docker/stop docker/down docker/restart
+.PHONY: docker/build docker/start docker/start-build docker/stop docker/down docker/restart docker/restart-force
+
+docker/build:
+	docker-compose build --no-cache
 
 docker/start:
+	docker-compose up -d --remove-orphans
+
+docker/start-build:
 	docker-compose up -d --build --remove-orphans
 
 docker/stop:
@@ -12,3 +18,7 @@ docker/down:
 docker/restart:
 	make docker/stop
 	make docker/start
+
+docker/restart-force:
+	make docker/down
+	make docker/start-build
