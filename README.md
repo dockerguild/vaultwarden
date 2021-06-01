@@ -1,9 +1,9 @@
-# Bitwarden with Docker
+# Vaultwarden with Docker
 
 ## Installation
 
-    git clone git@github.com:dockerguild/bitwarden.git bitwarden
-    cd bitwarden
+    git clone git@github.com:dockerguild/vaultwarden.git vaultwarden
+    cd vaultwarden
     rm -fr .git
     git init
     git remote add origin <MY_REPOSITORY>
@@ -14,14 +14,14 @@ Requirement : Nginx
 
 Edit vhost `config/nginx/proxy.conf` and register it to nginx
 
-    cp "${PWD}/config/nginx/proxy.conf" /etc/nginx/sites-enabled/bitwarden.conf
+    cp "${PWD}/config/nginx/proxy.conf" /etc/nginx/sites-enabled/vaultwarden.conf
     service nginx restart
 
 ## Configure crontab
 
 Edit vhost `config/crontab/crontab` and register it to crontab
 
-    cp "${PWD}/config/crontab/crontab" /etc/cron.d/bitwarden
+    cp "${PWD}/config/crontab/crontab" /etc/cron.d/vaultwarden
 
 ## Usage
 

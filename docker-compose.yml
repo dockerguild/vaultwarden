@@ -2,7 +2,7 @@ version: "3"
 services:
 
   server:
-    image: bitwardenrs/server:alpine
+    image: vaultwarden/server:alpine
     container_name: ${APP_NAME}_server
     restart: unless-stopped
     volumes:
